@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const secretkey = "llave"; // la misma palabra que en las rutas
 
 const authMiddleware = (req, res, next) => {
-  const token = req.header("Authorization")?.replace("Bearer", "");
+  const token = req.header("Authorization")?.replace("TOKEN ", "");
 
   if (!token) {
     return res

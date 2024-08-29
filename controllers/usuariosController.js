@@ -118,8 +118,22 @@ exports.login = async (req, res) => {
     // Busca el usuario utilizando el campo correo_electronico
     const user = await Usuario.findOne({ where: { correo_electronico } });
 
-    // Verifica si el usuario existe y la contraseña es correcta
-    if (!user || !(await bcrypt.compare(password, user.password))) {
+    if (!user) {
+      console.log("Usuario no encontrado");
+      return res
+        .status(401)
+        .json({ error: "USUARIO O CONTRASEÑA INCORRECTOS" });
+    }
+
+    console.log("Usuario encontrado:", user);
+
+    // Verifica si la contraseña es correcta
+    const passwordCorrect = await bcrypt.compare(password, user.password);
+    console.log("Contraseña proporcionada:", password);
+    console.log("Hash almacenado:", user.password);
+    console.log("¿Contraseñas coinciden?:", passwordCorrect);
+
+    if (!passwordCorrect) {
       return res
         .status(401)
         .json({ error: "USUARIO O CONTRASEÑA INCORRECTOS" });
