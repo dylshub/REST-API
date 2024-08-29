@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "ec7487d7-841c-4b92-a957-0211124880f3",
+		"name": "PRUEBA_REST_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37925601"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "CREAR USUARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre_completo\": \"Andrea Galilea Rodas Argueta\",\r\n  \"correo_electronico\": \"galilearodas@gmail.com\",\r\n  \"telefono\": \"57570456\",\r\n  \"password\":\"12\",\r\n  \"rol_idrol\": 1, // Debe ser un ID válido en tu tabla de roles\r\n  \"estados_idestados\": 1, // Debe ser un ID válido en tu tabla de estados\r\n   \"fecha_nacimiento\": \"2014-11-27\",\r\n  \"fecha_creacion\": \"2024-08-28\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR USUARIOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR USUARIO CON ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR USUARIO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"correo_electronico\": \"danielrodas@outlook.com\",\r\n    \"nombre_completo\": \"Jairo Daniel Rodas Argueta\",\r\n    \"password\": \"root\",\r\n    \"telefono\": \"987654321\",\r\n    \"fecha_nacimiento\": \"2009-11-16\",\r\n    \"fecha_creacion\": \"2024-08-27\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTOS",
+			"item": [
+				{
+					"name": "INSERTAR PRODUCTOS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CategoriaProductos_idCategoriaProductos\": 1,\r\n  \"usuarios_idusuarios\": 1,\r\n  \"nombre\": \"IPAD\",\r\n  \"marca\": \"APPLE\",\r\n  \"codigo\": \"12345\",\r\n  \"stock\": 8000,\r\n  \"estados_idestados\": 1,\r\n  \"precio\": 20000,\r\n  \"fecha_creacion\": \"2024-09-15\",\r\n  \"foto\":\"null\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR PRODUCTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR PRODUCTOS CON ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ESTADOS",
+			"item": [
+				{
+					"name": "CREAR ESTADO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n        \"nombre\": \"ADMINISTRADOR\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER TODOS LOS ESTADOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR ESTADO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"ADMINISTRADOR DYLAN\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/estados/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estados",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORDENES",
+			"item": [
+				{
+					"name": "CREAR ORDEN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": " application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarios_idusuarios\": 1,\r\n  \"estados_idestados\": 1,\r\n  \"nombre_completo\": \"Juan Pérez\",\r\n  \"direccion\": \"Calle Falsa 123\",\r\n  \"telefono\": \"12345678\",\r\n  \"correo_electronico\": \"juan.perez@example.com\",\r\n  \"fecha_entrega\": \"2024-09-01\",\r\n  \"total_orden\": 100.50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ordenes/OrdenDetalles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ordenes",
+								"OrdenDetalles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER ORDENES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/ordenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ordenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR ORDENES",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"idOrden\": 1,\r\n        \"usuarios_idusuarios\": 1,\r\n        \"estados_idestados\": 1,\r\n        \"fecha_creacion\": \"2024-08-28\",\r\n        \"nombre_completo\": \"Dylan MASTER\",\r\n        \"direccion\": \"ZARAGOZA\",\r\n        \"telefono\": \"55730146\",\r\n        \"correo_electronico\": \"dylanrodas10@gmail.com\",\r\n        \"fecha_entrega\": \"2024-12-30\",\r\n        \"total_orden\": 120\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ordenes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ordenes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRUEBA CON TOKEN",
+			"item": [
+				{
+					"name": "GETALL TOKEN",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "TOKEN eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlhdCI6MTcyNDkxMDA2NCwiZXhwIjoxNzI0OTk2NDY0fQ.STkWGzTJkes30MihbZ3sy6zsVqxGgRTwT8jQkO989G8",
+								"description": "consulta con token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"getAll"
+							]
+						},
+						"description": "EN ESTE ARCHIVO REALICE LA PRUEBA CON UN TOKEN \r\nAuthorization: TOKEN <token-obtenido>"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
