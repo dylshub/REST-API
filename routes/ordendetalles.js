@@ -5,7 +5,10 @@ const ordenDetallesController = require("../controllers/ordendetallesController"
 // Crear nuevo detalle de orden
 router.post("/", ordenDetallesController.createOrdenDetalles);
 
-// Obtener todos los detalles de órdenes
+//OBTENER DETALLE DE LA ORDEN CON ID DETALLE
+router.get("/:id", ordenDetallesController.getOrdenDetalleById);
+
+// Obtener todos los detalles de ordenes
 router.get("/", ordenDetallesController.getAllOrdenDetalles);
 
 // Actualizar un detalle de orden

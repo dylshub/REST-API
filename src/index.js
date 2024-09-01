@@ -5,6 +5,7 @@ const categoriasRoutes = require("../routes/categorias");
 const estadosRoutes = require("../routes/estados");
 const usuariosRoutes = require("../routes/usuarios");
 const ordenesRoutes = require("../routes/ordenes");
+const ordendetallesRoutes = require("../routes/ordendetalles");
 const authMiddleware = require("../middleware/authMiddleware");
 
 const app = express();
@@ -19,6 +20,7 @@ app.use("/api/productos", authMiddleware, productosRoutes);
 app.use("/api/categorias", authMiddleware, categoriasRoutes);
 app.use("/api/estados", authMiddleware, estadosRoutes);
 app.use("/api/ordenes", authMiddleware, ordenesRoutes);
+app.use("/api/ordendetalles", authMiddleware, ordendetallesRoutes);
 app.get("/api/usuarios/getAll", authMiddleware, usuariosRoutes);
 app.get("/api/usuarios/:id", authMiddleware, usuariosRoutes);
 app.put("/api/usuarios/:id", authMiddleware, usuariosRoutes);

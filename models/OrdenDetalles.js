@@ -31,6 +31,12 @@ const OrdenDetalles = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+
+    precio: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+
     subtotal: {
       type: DataTypes.FLOAT,
       allowNull: false,

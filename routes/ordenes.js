@@ -11,4 +11,10 @@ router.get("/", ordenesController.getAllOrdenes);
 // Actualizar una orden
 router.put("/:id", ordenesController.updateOrden);
 
+//OBTENER ORDEN POR ID
+router.get("/:id", ordenesController.getOrdenById);
+
+//CREAR ORDEN CON ORDEN DETALLES
+router.post("/detalles", ordenesController.createOrdenConDetalles);
+
 module.exports = router;

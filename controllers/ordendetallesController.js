@@ -9,6 +9,32 @@ exports.createOrdenDetalles = async (req, res) => {
   }
 };
 
+//OBTENER ORDEN POR ID
+exports.getOrdenDetalleById = async (req, res) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+
+    if (isNaN(id)) {
+      console.log("ERROR CRITICO");
+      return res.status(400).json({ error: "ID inválido" });
+    }
+
+    const ordendetalles = await OrdenDetalles.findByPk(id);
+
+    if (ordendetalles) {
+      console.log("Orden obtenido correctamente:");
+      res.status(200).json(ordendetalles);
+    } else {
+      res.status(404).json({ error: "Orden no encontrada" });
+    }
+  } catch (error) {
+    console.error("Error al obtener la Orden:", error.message);
+    res.status(500).json({
+      error: "Error interno del servidor. Inténtalo de nuevo más tarde.",
+    });
+  }
+};
+
 exports.getAllOrdenDetalles = async (req, res) => {
   try {
     const ordenesDetalles = await OrdenDetalles.findAll();
